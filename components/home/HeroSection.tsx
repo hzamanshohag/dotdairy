@@ -17,7 +17,11 @@ const heroImages = [
     alt: "নওগাঁর বিখ্যাত পাড়া সন্দেশ",
   },
   {
-    src: "https://i.ibb.co.com/qM80XwGL/Whats-App-Image-2026-09-26-at-8-26-35-PM.jpg",
+    src: "https://i.ibb.co.com/PzfnZFKk/file-000000000a28821092b465f269f8f31a.png",
+    alt: "নওগাঁর ঐতিহ্যবাহী পাড়া সন্দেশ",
+  },
+  {
+    src: "https://i.ibb.co.com/n8ZSvvg8/file-000000009a4481f4992e2914f7e3a007.png",
     alt: "নওগাঁর ঐতিহ্যবাহী পাড়া সন্দেশ",
   },
 ];

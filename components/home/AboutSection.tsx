@@ -1,5 +1,16 @@
+"use client";
+
 import Image from "next/image";
-import { Award, Heart, ShieldCheck, Leaf, PackageCheck } from "lucide-react";
+import { useEffect, useState } from "react";
+import {
+  Award,
+  Heart,
+  ShieldCheck,
+  Leaf,
+  PackageCheck,
+  Play,
+  X,
+} from "lucide-react";
 
 const features = [
   {
@@ -30,206 +41,308 @@ const features = [
 ];
 
 export default function AboutSection() {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+
+  // Replace this with your actual YouTube video ID
+  const youtubeVideoId = "jo0KOH04t4A";
+
+  // Prevent background scrolling when modal is open
+  useEffect(() => {
+    if (isVideoOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isVideoOpen]);
+
+  // Close modal with ESC key
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsVideoOpen(false);
+      }
+    };
+
+    if (isVideoOpen) {
+      window.addEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isVideoOpen]);
+
   return (
-    <section
-      id="about"
-      className="scroll-mt-20 bg-[#fff8eb] py-12 sm:py-16 lg:py-20"
-    >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* ================================================= */}
-        {/* MAIN ABOUT */}
-        {/* ================================================= */}
-
-        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+    <>
+      <section
+        id="about"
+        className="scroll-mt-20 bg-[#fff8eb] py-12 sm:py-16 lg:py-20"
+      >
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* ================================================= */}
-          {/* IMAGE */}
+          {/* MAIN ABOUT */}
           {/* ================================================= */}
 
-          <div className="relative">
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-[#f3e5cd] shadow-xl">
-              <Image
-                src="https://i.ibb.co.com/qYbB6mLM/Chat-GPT-Image-Sep-26-2026-08-38-12-PM.png"
-                alt="নওগাঁর বিখ্যাত পাড়া সন্দেশ"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-
-              {/* Image Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-            </div>
-
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
             {/* ================================================= */}
-            {/* HERITAGE BADGE */}
+            {/* IMAGE */}
             {/* ================================================= */}
 
-            <div className="absolute -right-2 -top-2 flex h-[92px] w-[92px] items-center justify-center rounded-full border-4 border-[#fff8eb] bg-[#8b0808] text-center text-white shadow-xl sm:-right-3 sm:-top-3 sm:h-[110px] sm:w-[110px]">
-              <div>
-                <p className="text-[10px] sm:text-xs">নওগাঁর</p>
+            <div className="relative">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-[#f3e5cd] shadow-xl">
+                <Image
+                  src="https://i.ibb.co.com/qYbB6mLM/Chat-GPT-Image-Sep-26-2026-08-38-12-PM.png"
+                  alt="নওগাঁর বিখ্যাত পাড়া সন্দেশ"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
 
-                <p className="text-xs font-bold sm:text-sm">ঐতিহ্যবাহী</p>
+                {/* Image Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/5" />
 
-                <p className="text-xs font-bold text-yellow-300 sm:text-sm">
-                  পাড়া সন্দেশ
-                </p>
-              </div>
-            </div>
+                {/* ================================================= */}
+                {/* YOUTUBE PLAY BUTTON */}
+                {/* ================================================= */}
 
-            {/* ================================================= */}
-            {/* SMALL DECORATION */}
-            {/* ================================================= */}
-
-            <div className="absolute -bottom-3 left-5 flex items-center gap-2 rounded-full border border-[#ead9bd] bg-white px-4 py-2 shadow-md sm:left-8">
-              <span className="h-2 w-2 rounded-full bg-[#d71920]" />
-
-              <span className="text-xs font-semibold text-[#570808]">
-                নওগাঁর ঐতিহ্যের স্বাদ
-              </span>
-            </div>
-          </div>
-
-          {/* ================================================= */}
-          {/* CONTENT */}
-          {/* ================================================= */}
-
-          <div className="lg:pl-2">
-            {/* Label */}
-            <div className="mb-3 flex items-center gap-3">
-              <div className="h-px w-8 bg-[#d71920]" />
-
-              <p className="text-xs font-bold uppercase tracking-wider text-[#d71920] sm:text-sm">
-                আমাদের সম্পর্কে
-              </p>
-            </div>
-
-            {/* Heading */}
-            <h2 className="max-w-xl text-3xl font-black leading-tight text-[#570808] sm:text-4xl lg:text-[42px]">
-              নওগাঁর বিখ্যাত{" "}
-              <span className="text-[#d71920]">পাড়া সন্দেশ</span>
-            </h2>
-
-            {/* Description */}
-            <div className="mt-5 max-w-xl space-y-3 text-sm leading-7 text-gray-700 sm:text-[15px]">
-              <p>
-                নওগাঁর ঐতিহ্যবাহী পাড়া সন্দেশ একটি বিখ্যাত ও জনপ্রিয় মিষ্টি।
-                এর স্বাদ, ঘ্রাণ এবং অনন্য তৈরির প্রক্রিয়ার জন্য এটি সবার কাছে
-                বিশেষভাবে পরিচিত।
-              </p>
-
-              <p>
-                খাঁটি দুধ, উন্নতমানের ছানা এবং যত্নসহকারে নির্বাচিত উপকরণ
-                ব্যবহার করে আমরা তৈরি করি আমাদের পাড়া সন্দেশ।
-              </p>
-
-              <p>
-                ঐতিহ্যের স্বাদ ও আধুনিক মানের সমন্বয়ে আমাদের লক্ষ্য হলো নওগাঁর
-                বিখ্যাত এই মিষ্টির স্বাদ সবার কাছে পৌঁছে দেওয়া।
-              </p>
-            </div>
-
-            {/* ================================================= */}
-            {/* STATS */}
-            {/* ================================================= */}
-
-            <div className="mt-7 grid max-w-xl grid-cols-3 gap-2 sm:gap-3">
-              {/* Stat 1 */}
-              <div className="rounded-2xl border border-[#ead9bd] bg-[#fff0d0] px-2 py-4 text-center sm:px-4">
-                <p className="text-xl font-black text-[#8b0808] sm:text-2xl">
-                  ১০০%
-                </p>
-
-                <p className="mt-1 text-[10px] font-medium text-gray-600 sm:text-xs">
-                  খাঁটি উপকরণ
-                </p>
-              </div>
-
-              {/* Stat 2 */}
-              <div className="rounded-2xl border border-[#ead9bd] bg-[#fff0d0] px-2 py-4 text-center sm:px-4">
-                <p className="text-xl font-black text-[#8b0808] sm:text-2xl">
-                  তাজা
-                </p>
-
-                <p className="mt-1 text-[10px] font-medium text-gray-600 sm:text-xs">
-                  প্রতিদিন প্রস্তুত
-                </p>
-              </div>
-
-              {/* Stat 3 */}
-              <div className="rounded-2xl border border-[#ead9bd] bg-[#fff0d0] px-2 py-4 text-center sm:px-4">
-                <p className="text-xl font-black text-[#8b0808] sm:text-2xl">
-                  হোম
-                </p>
-
-                <p className="mt-1 text-[10px] font-medium text-gray-600 sm:text-xs">
-                  ডেলিভারি সুবিধা
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* ================================================= */}
-        {/* DIVIDER */}
-        {/* ================================================= */}
-
-        <div className="my-12 flex items-center justify-center gap-3 sm:my-16">
-          <div className="h-px w-16 bg-[#d71920]/20 sm:w-24" />
-
-          <span className="text-lg text-[#d71920]">❧</span>
-
-          <div className="h-px w-16 bg-[#d71920]/20 sm:w-24" />
-        </div>
-
-        {/* ================================================= */}
-        {/* FEATURES */}
-        {/* ================================================= */}
-
-        <div>
-          {/* Heading */}
-          <div className="mx-auto mb-7 max-w-2xl text-center sm:mb-9">
-            <p className="mb-2 text-xs font-bold uppercase tracking-wider text-[#d71920]">
-              আমাদের বিশেষত্ব
-            </p>
-
-            <h3 className="text-2xl font-black text-[#570808] sm:text-3xl">
-              কেন আমাদের পাড়া সন্দেশ?
-            </h3>
-
-            <p className="mx-auto mt-2 max-w-lg text-xs leading-5 text-gray-600 sm:text-sm sm:leading-6">
-              মান, ঐতিহ্য এবং ভালোবাসার সমন্বয়ে তৈরি প্রতিটি সন্দেশ।
-            </p>
-          </div>
-
-          {/* Feature Cards */}
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 sm:gap-4 md:grid-cols-3 lg:grid-cols-5">
-            {features.map((feature) => {
-              const Icon = feature.icon;
-
-              return (
-                <div
-                  key={feature.title}
-                  className="group rounded-2xl border border-[#ead9bd] bg-[#fffdf7] p-4 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#d9b978] hover:shadow-lg sm:p-5"
+                <button
+                  type="button"
+                  onClick={() => setIsVideoOpen(true)}
+                  aria-label="ভিডিও দেখুন"
+                  className="group absolute left-1/2 top-1/2 z-20 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center"
                 >
-                  {/* Icon */}
-                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#620909] text-yellow-300 shadow-sm transition-transform duration-300 group-hover:scale-110 sm:h-14 sm:w-14">
-                    <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
-                  </div>
+                  {/* Outer blinking ring */}
+                  <span className="absolute h-24 w-24 animate-ping rounded-full bg-[#ed1c24]/30 sm:h-28 sm:w-28" />
 
-                  {/* Title */}
-                  <h4 className="mt-3 text-xs font-bold leading-5 text-[#570808] sm:mt-4 sm:text-sm">
-                    {feature.title}
-                  </h4>
+                  {/* Second subtle ring */}
+                  <span className="absolute h-20 w-20 rounded-full border-4 border-white/40 sm:h-24 sm:w-24" />
 
-                  {/* Description */}
-                  <p className="mt-2 text-[10px] leading-4 text-gray-600 sm:text-xs sm:leading-5">
-                    {feature.description}
+                  {/* Main button */}
+                  <span className="relative flex h-16 w-16 items-center justify-center rounded-full bg-[#ed1c24] text-white shadow-2xl transition-all duration-300 group-hover:scale-110 group-hover:bg-[#c9141b] sm:h-20 sm:w-20">
+                    <Play className="ml-1 h-7 w-7 fill-white sm:h-9 sm:w-9" />
+                  </span>
+                </button>
+
+                {/* Video label */}
+                <div className="absolute bottom-5 left-1/2 z-20 -translate-x-1/2 rounded-full border border-white/30 bg-black/45 px-4 py-2 text-xs font-semibold text-white backdrop-blur-md sm:text-sm">
+                  ▶ ভিডিও দেখুন
+                </div>
+              </div>
+
+              {/* ================================================= */}
+              {/* HERITAGE BADGE */}
+              {/* ================================================= */}
+
+              <div className="absolute -right-2 -top-2 flex h-[92px] w-[92px] items-center justify-center rounded-full border-4 border-[#fff8eb] bg-[#8b0808] text-center text-white shadow-xl sm:-right-3 sm:-top-3 sm:h-[110px] sm:w-[110px]">
+                <div>
+                  <p className="text-[10px] sm:text-xs">নওগাঁর</p>
+
+                  <p className="text-xs font-bold sm:text-sm">ঐতিহ্যবাহী</p>
+
+                  <p className="text-xs font-bold text-yellow-300 sm:text-sm">
+                    পাড়া সন্দেশ
                   </p>
                 </div>
-              );
-            })}
+              </div>
+
+              {/* ================================================= */}
+              {/* SMALL DECORATION */}
+              {/* ================================================= */}
+
+              <div className="absolute -bottom-3 left-5 flex items-center gap-2 rounded-full border border-[#ead9bd] bg-white px-4 py-2 shadow-md sm:left-8">
+                <span className="h-2 w-2 rounded-full bg-[#d71920]" />
+
+                <span className="text-xs font-semibold text-[#570808]">
+                  নওগাঁর ঐতিহ্যের স্বাদ
+                </span>
+              </div>
+            </div>
+
+            {/* ================================================= */}
+            {/* CONTENT */}
+            {/* ================================================= */}
+
+            <div className="lg:pl-2">
+              {/* Label */}
+              <div className="mb-3 flex items-center gap-3">
+                <div className="h-px w-8 bg-[#d71920]" />
+
+                <p className="text-xs font-bold uppercase tracking-wider text-[#d71920] sm:text-sm">
+                  আমাদের সম্পর্কে
+                </p>
+              </div>
+
+              {/* Heading */}
+              <h2 className="max-w-xl text-3xl font-black leading-tight text-[#570808] sm:text-4xl lg:text-[42px]">
+                নওগাঁর বিখ্যাত{" "}
+                <span className="text-[#d71920]">পাড়া সন্দেশ</span>
+              </h2>
+
+              {/* Description */}
+              <div className="mt-5 max-w-xl space-y-3 text-sm leading-7 text-gray-700 sm:text-[15px]">
+                <p>
+                  নওগাঁর ঐতিহ্যবাহী পাড়া সন্দেশ একটি বিখ্যাত ও জনপ্রিয় মিষ্টি।
+                  এর স্বাদ, ঘ্রাণ এবং অনন্য তৈরির প্রক্রিয়ার জন্য এটি সবার কাছে
+                  বিশেষভাবে পরিচিত।
+                </p>
+
+                <p>
+                  খাঁটি দুধ, উন্নতমানের ছানা এবং যত্নসহকারে নির্বাচিত উপকরণ
+                  ব্যবহার করে আমরা তৈরি করি আমাদের পাড়া সন্দেশ।
+                </p>
+
+                <p>
+                  ঐতিহ্যের স্বাদ ও আধুনিক মানের সমন্বয়ে আমাদের লক্ষ্য হলো
+                  নওগাঁর বিখ্যাত এই মিষ্টির স্বাদ সবার কাছে পৌঁছে দেওয়া।
+                </p>
+              </div>
+
+              {/* ================================================= */}
+              {/* STATS */}
+              {/* ================================================= */}
+
+              <div className="mt-7 grid max-w-xl grid-cols-3 gap-2 sm:gap-3">
+                {/* Stat 1 */}
+                <div className="rounded-2xl border border-[#ead9bd] bg-[#fff0d0] px-2 py-4 text-center sm:px-4">
+                  <p className="text-xl font-black text-[#8b0808] sm:text-2xl">
+                    ১০০%
+                  </p>
+
+                  <p className="mt-1 text-[10px] font-medium text-gray-600 sm:text-xs">
+                    খাঁটি উপকরণ
+                  </p>
+                </div>
+
+                {/* Stat 2 */}
+                <div className="rounded-2xl border border-[#ead9bd] bg-[#fff0d0] px-2 py-4 text-center sm:px-4">
+                  <p className="text-xl font-black text-[#8b0808] sm:text-2xl">
+                    তাজা
+                  </p>
+
+                  <p className="mt-1 text-[10px] font-medium text-gray-600 sm:text-xs">
+                    প্রতিদিন প্রস্তুত
+                  </p>
+                </div>
+
+                {/* Stat 3 */}
+                <div className="rounded-2xl border border-[#ead9bd] bg-[#fff0d0] px-2 py-4 text-center sm:px-4">
+                  <p className="text-xl font-black text-[#8b0808] sm:text-2xl">
+                    হোম
+                  </p>
+
+                  <p className="mt-1 text-[10px] font-medium text-gray-600 sm:text-xs">
+                    ডেলিভারি সুবিধা
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* ================================================= */}
+          {/* DIVIDER */}
+          {/* ================================================= */}
+
+          <div className="my-12 flex items-center justify-center gap-3 sm:my-16">
+            <div className="h-px w-16 bg-[#d71920]/20 sm:w-24" />
+
+            <span className="text-lg text-[#d71920]">❧</span>
+
+            <div className="h-px w-16 bg-[#d71920]/20 sm:w-24" />
+          </div>
+
+          {/* ================================================= */}
+          {/* FEATURES */}
+          {/* ================================================= */}
+
+          <div>
+            {/* Heading */}
+            <div className="mx-auto mb-7 max-w-2xl text-center sm:mb-9">
+              <p className="mb-2 text-xs font-bold uppercase tracking-wider text-[#d71920]">
+                আমাদের বিশেষত্ব
+              </p>
+
+              <h3 className="text-2xl font-black text-[#570808] sm:text-3xl">
+                কেন আমাদের পাড়া সন্দেশ?
+              </h3>
+
+              <p className="mx-auto mt-2 max-w-lg text-xs leading-5 text-gray-600 sm:text-sm sm:leading-6">
+                মান, ঐতিহ্য এবং ভালোবাসার সমন্বয়ে তৈরি প্রতিটি সন্দেশ।
+              </p>
+            </div>
+
+            {/* Feature Cards */}
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 sm:gap-4 md:grid-cols-3 lg:grid-cols-5">
+              {features.map((feature) => {
+                const Icon = feature.icon;
+
+                return (
+                  <div
+                    key={feature.title}
+                    className="group rounded-2xl border border-[#ead9bd] bg-[#fffdf7] p-4 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#d9b978] hover:shadow-lg sm:p-5"
+                  >
+                    {/* Icon */}
+                    <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[#620909] text-yellow-300 shadow-sm transition-transform duration-300 group-hover:scale-110 sm:h-14 sm:w-14">
+                      <Icon className="h-5 w-5 sm:h-6 sm:w-6" />
+                    </div>
+
+                    {/* Title */}
+                    <h4 className="mt-3 text-xs font-bold leading-5 text-[#570808] sm:mt-4 sm:text-sm">
+                      {feature.title}
+                    </h4>
+
+                    {/* Description */}
+                    <p className="mt-2 text-[10px] leading-4 text-gray-600 sm:text-xs sm:leading-5">
+                      {feature.description}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* ===================================================== */}
+      {/* YOUTUBE MODAL */}
+      {/* ===================================================== */}
+
+      {isVideoOpen && (
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+          onClick={() => setIsVideoOpen(false)}
+        >
+          {/* Modal */}
+          <div
+            className="relative w-full max-w-5xl overflow-hidden rounded-2xl bg-black shadow-2xl"
+            onClick={(event) => event.stopPropagation()}
+          >
+            {/* Close Button */}
+            <button
+              type="button"
+              onClick={() => setIsVideoOpen(false)}
+              aria-label="Close video"
+              className="absolute right-3 top-3 z-30 flex h-10 w-10 items-center justify-center rounded-full bg-black/70 text-white transition hover:bg-[#ed1c24] active:scale-95"
+            >
+              <X className="h-5 w-5" />
+            </button>
+
+            {/* Video */}
+            <div className="relative aspect-video w-full">
+              <iframe
+                src={`https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&rel=0`}
+                title="নওগাঁর পাড়া সন্দেশ"
+                className="absolute inset-0 h-full w-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 }

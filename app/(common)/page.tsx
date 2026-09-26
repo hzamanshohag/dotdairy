@@ -5,6 +5,7 @@ import ProductsSection from "@/components/home/ProductsSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import WhyUsSection from "@/components/home/WhyUsSection";
 import Footer from "@/components/shared/Footer";
+import WhatsAppButton from './../../components/home/WhatsAppButton';
 
 
 
@@ -32,6 +33,8 @@ const page = async () => {
         <section id="testimonials">
           <TestimonialsSection />
         </section>
+
+         <WhatsAppButton/>
 
         <section id="contact">
           <Footer />
