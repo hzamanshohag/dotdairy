@@ -46,9 +46,19 @@ const sidebarLinks = [
     href: "/admin/hero",
     icon: ImageIcon,
   },
-   {
+  {
     label: "About Section",
     href: "/admin/about",
+    icon: ImageIcon,
+  },
+  {
+    label: "Products",
+    href: "/admin/products",
+    icon: ImageIcon,
+  },
+  {
+    label: "Orders",
+    href: "/admin/orders",
     icon: ImageIcon,
   },
   {
