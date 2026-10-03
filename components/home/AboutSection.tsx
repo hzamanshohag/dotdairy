@@ -97,7 +97,7 @@
 //               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-[#f3e5cd] shadow-xl">
 //                 <Image
 //                   src="https://i.ibb.co.com/qYbB6mLM/Chat-GPT-Image-Sep-26-2026-08-38-12-PM.png"
-//                   alt="নওগাঁর বিখ্যাত পাড়া সন্দেশ"
+//                   alt="নওগাঁর বিখ্যাত প্যারা সন্দেশ"
 //                   fill
 //                   sizes="(max-width: 1024px) 100vw, 50vw"
 //                   className="object-cover"
@@ -145,7 +145,7 @@
 //                   <p className="text-xs font-bold sm:text-sm">ঐতিহ্যবাহী</p>
 
 //                   <p className="text-xs font-bold text-yellow-300 sm:text-sm">
-//                     পাড়া সন্দেশ
+//                     প্যারা সন্দেশ
 //                   </p>
 //                 </div>
 //               </div>
@@ -180,20 +180,20 @@
 //               {/* Heading */}
 //               <h2 className="max-w-xl text-3xl font-black leading-tight text-[#570808] sm:text-4xl lg:text-[42px]">
 //                 নওগাঁর বিখ্যাত{" "}
-//                 <span className="text-[#d71920]">পাড়া সন্দেশ</span>
+//                 <span className="text-[#d71920]">প্যারা সন্দেশ</span>
 //               </h2>
 
 //               {/* Description */}
 //               <div className="mt-5 max-w-xl space-y-3 text-sm leading-7 text-gray-700 sm:text-[15px]">
 //                 <p>
-//                   নওগাঁর ঐতিহ্যবাহী পাড়া সন্দেশ একটি বিখ্যাত ও জনপ্রিয় মিষ্টি।
+//                   নওগাঁর ঐতিহ্যবাহী প্যারা সন্দেশ একটি বিখ্যাত ও জনপ্রিয় মিষ্টি।
 //                   এর স্বাদ, ঘ্রাণ এবং অনন্য তৈরির প্রক্রিয়ার জন্য এটি সবার কাছে
 //                   বিশেষভাবে পরিচিত।
 //                 </p>
 
 //                 <p>
 //                   খাঁটি দুধ, উন্নতমানের ছানা এবং যত্নসহকারে নির্বাচিত উপকরণ
-//                   ব্যবহার করে আমরা তৈরি করি আমাদের পাড়া সন্দেশ।
+//                   ব্যবহার করে আমরা তৈরি করি আমাদের প্যারা সন্দেশ।
 //                 </p>
 
 //                 <p>
@@ -267,7 +267,7 @@
 //               </p>
 
 //               <h3 className="text-2xl font-black text-[#570808] sm:text-3xl">
-//                 কেন আমাদের পাড়া সন্দেশ?
+//                 কেন আমাদের প্যারা সন্দেশ?
 //               </h3>
 
 //               <p className="mx-auto mt-2 max-w-lg text-xs leading-5 text-gray-600 sm:text-sm sm:leading-6">
@@ -335,7 +335,7 @@
 //             <div className="relative aspect-video w-full">
 //               <iframe
 //                 src={`https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&rel=0`}
-//                 title="নওগাঁর পাড়া সন্দেশ"
+//                 title="নওগাঁর প্যারা সন্দেশ"
 //                 className="absolute inset-0 h-full w-full"
 //                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 //                 allowFullScreen

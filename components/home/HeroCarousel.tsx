@@ -113,7 +113,7 @@ export default function HeroCarousel({ images }: HeroCarouselProps) {
           <p className="text-xs font-bold sm:text-sm">ঐতিহ্যবাহী</p>
 
           <p className="text-xs font-bold text-yellow-300 sm:text-sm">
-            পাড়া সন্দেশ
+            প্যারা সন্দেশ
           </p>
         </div>
 

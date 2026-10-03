@@ -104,7 +104,7 @@ export default function AboutSectionClient({ about }: AboutSectionClientProps) {
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-[#f3e5cd] shadow-xl">
                 <Image
                   src={about.image.url}
-                  alt={about.image.alt || "নওগাঁর বিখ্যাত পাড়া সন্দেশ"}
+                  alt={about.image.alt || "নওগাঁর বিখ্যাত প্যারা সন্দেশ"}
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
@@ -153,7 +153,7 @@ export default function AboutSectionClient({ about }: AboutSectionClientProps) {
                   <p className="text-xs font-bold sm:text-sm">ঐতিহ্যবাহী</p>
 
                   <p className="text-xs font-bold text-yellow-300 sm:text-sm">
-                    পাড়া সন্দেশ
+                    প্যারা সন্দেশ
                   </p>
                 </div>
               </div>
@@ -249,7 +249,7 @@ export default function AboutSectionClient({ about }: AboutSectionClientProps) {
               </p>
 
               <h3 className="text-2xl font-black text-[#570808] sm:text-3xl">
-                কেন আমাদের পাড়া সন্দেশ?
+                কেন আমাদের প্যারা সন্দেশ?
               </h3>
 
               <p className="mx-auto mt-2 max-w-lg text-xs leading-5 text-gray-600 sm:text-sm sm:leading-6">
@@ -314,7 +314,7 @@ export default function AboutSectionClient({ about }: AboutSectionClientProps) {
             <div className="relative aspect-video w-full">
               <iframe
                 src={`https://www.youtube.com/embed/${about.videoId}?autoplay=1&rel=0`}
-                title="নওগাঁর পাড়া সন্দেশ"
+                title="নওগাঁর প্যারা সন্দেশ"
                 className="absolute inset-0 h-full w-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen

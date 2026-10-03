@@ -12,15 +12,15 @@ export default function Footer() {
       <section className="border-b border-[#651414] bg-[#3b0000]">
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 px-4 py-4 sm:px-6 md:flex-row md:justify-between md:gap-6 lg:px-8">
           {/* Product Image */}
-          <div className="relative hidden h-16 w-40 shrink-0 sm:block lg:h-20 lg:w-48">
+          {/* <div className="relative hidden h-16 w-40 shrink-0 sm:block lg:h-20 lg:w-48">
             <Image
-              src="/images/footer-sandesh.png"
-              alt="নওগাঁর পাড়া সন্দেশ"
+              src="/img/logo.svg"
+              alt="নওগাঁর প্যারা সন্দেশ"
               fill
               sizes="192px"
               className="object-contain"
             />
-          </div>
+          </div> */}
 
           {/* CTA Text */}
           <div className="text-center md:flex-1 md:text-left">
@@ -58,23 +58,23 @@ export default function Footer() {
               <Link
                 href="/"
                 className="inline-flex items-center"
-                aria-label="নওগাঁ পাড়া সন্দেশ"
+                aria-label="নওগাঁ প্যারা সন্দেশ"
               >
                 <Image
-                  src="/images/logo.svg"
-                  alt="নওগাঁ পাড়া সন্দেশ"
-                  width={110}
-                  height={60}
-                  className="h-auto w-[85px] sm:w-[95px]"
+                  src="/img/logo.svg"
+                  alt="নওগাঁ প্যারা সন্দেশ"
+                  width={150}
+                  height={100}
+                  className="w-[180px] h-[100px] sm:w-[150px] sm:h-[85px] object-contain"
                 />
               </Link>
 
               <h3 className="mt-2.5 text-sm font-bold text-[#f5c400] sm:text-base">
-                নওগাঁর পাড়া সন্দেশ
+                নওগাঁর প্যারা সন্দেশ
               </h3>
 
               <p className="mt-1.5 max-w-sm text-xs leading-5 text-gray-300 sm:text-sm sm:leading-6">
-                নওগাঁর ঐতিহ্যবাহী পাড়া সন্দেশ। খাঁটি দুধ, মানসম্মত ছানা এবং
+                নওগাঁর ঐতিহ্যবাহী প্যারা সন্দেশ। খাঁটি দুধ, মানসম্মত ছানা এবং
                 ঐতিহ্যবাহী রেসিপিতে তৈরি আমাদের সুস্বাদু সন্দেশ।
               </p>
             </div>
@@ -150,35 +150,32 @@ export default function Footer() {
 
                   <span>নওগাঁ, বাংলাদেশ</span>
                 </li>
-
                 {/* Phone */}
                 <li className="flex items-center gap-2.5">
                   <Phone className="h-4 w-4 shrink-0 text-[#f5c400]" />
 
                   <a
-                    href="tel:+8801XXXXXXXXX"
+                    href="tel:+8801781033511"
                     className="break-all transition hover:text-[#f5c400]"
                   >
-                    +880 1XXX-XXXXXX
+                    +880 1781-033511
                   </a>
                 </li>
-
                 {/* Email */}
                 <li className="flex items-center gap-2.5">
                   <Mail className="h-4 w-4 shrink-0 text-[#f5c400]" />
 
                   <a
-                    href="mailto:info@example.com"
+                    href="mailto:Jannatulferdous2381@gmail.com"
                     className="break-all transition hover:text-[#f5c400]"
                   >
-                    info@example.com
+                    Jannatulferdous2381@gmail.com
                   </a>
                 </li>
-
                 {/* Facebook */}
                 <li>
                   <a
-                    href="#"
+                    href="https://www.facebook.com/freshflavoursagro"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2.5 transition hover:text-[#1877f2]"
@@ -196,13 +193,30 @@ export default function Footer() {
       {/* =====================================================
           COPYRIGHT
       ===================================================== */}
-      <div className="border-t border-[#551010]">
+      {/* <div className="border-t border-[#551010]">
         <div className="mx-auto max-w-7xl px-4 py-3 text-center sm:px-6 sm:py-4 lg:px-8">
           <p className="text-[10px] leading-5 text-gray-400 sm:text-xs">
             © 2026 নওগাঁ পাড়া সন্দেশ | সর্বস্বত্ব সংরক্ষিত
           </p>
         </div>
-      </div>
+      </div> */}
+      <div className="border-t border-[#551010]">
+  <div className="mx-auto max-w-7xl px-4 py-3 text-center sm:px-6 sm:py-4 lg:px-8">
+    <p className="text-[10px] leading-5 text-gray-400 sm:text-xs">
+      © 2026 নওগাঁ পাড়া সন্দেশ | সর্বস্বত্ব সংরক্ষিত{" "}
+      <span className="mx-1 text-gray-600">•</span>
+      Developed by{" "}
+      <a
+        href="https://hzaman.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-medium text-[#f5c400] transition-colors hover:text-white"
+      >
+        Hzaman
+      </a>
+    </p>
+  </div>
+</div>
 
       {/* =====================================================
           BACK TO TOP

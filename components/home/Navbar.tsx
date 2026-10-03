@@ -37,8 +37,8 @@ export default function Navbar() {
           className="relative flex h-12 w-28 shrink-0 items-center"
         >
           <Image
-            src="/images/logo.svg"
-            alt="নওগাঁর পাড়া সন্দেশ"
+            src="/img/logo.svg"
+            alt="নওগাঁর প্যারা সন্দেশ"
             fill
             priority
             sizes="112px"

@@ -61,31 +61,31 @@ const sidebarLinks = [
     href: "/admin/orders",
     icon: ImageIcon,
   },
-  {
-    label: "SEO Settings",
-    href: "/admin/seo",
-    icon: Search,
-  },
-  {
-    label: "Social Media",
-    href: "/admin/social-media",
-    icon: Share2,
-  },
-  {
-    label: "Website Settings",
-    href: "/admin/settings",
-    icon: Settings,
-  },
-  {
-    label: "FAQ",
-    href: "/admin/faq",
-    icon: HelpCircle,
-  },
-  {
-    label: "Edit Profile",
-    href: "/admin/edit-profile",
-    icon: User,
-  },
+  // {
+  //   label: "SEO Settings",
+  //   href: "/admin/seo",
+  //   icon: Search,
+  // },
+  // {
+  //   label: "Social Media",
+  //   href: "/admin/social-media",
+  //   icon: Share2,
+  // },
+  // {
+  //   label: "Website Settings",
+  //   href: "/admin/settings",
+  //   icon: Settings,
+  // },
+  // {
+  //   label: "FAQ",
+  //   href: "/admin/faq",
+  //   icon: HelpCircle,
+  // },
+  // {
+  //   label: "Edit Profile",
+  //   href: "/admin/edit-profile",
+  //   icon: User,
+  // },
 ];
 
 /* =====================================================
@@ -114,10 +114,10 @@ function SidebarContent({
       <div className="px-6 py-6">
         <Link href="/" onClick={onClickLink} className="flex items-center">
           <Image
-            src="/images/logo.svg"
+src="/img/logo.svg"
+                  alt="নওগাঁ প্যারা সন্দেশ"
             width={144}
             height={64}
-            alt="Fresh Dairy Logo"
             priority
           />
         </Link>

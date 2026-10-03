@@ -647,7 +647,7 @@ export default async function OrderSection({
           </h2>
 
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-[#6b4a3d] sm:text-base">
-            আপনার পছন্দের পাড়া সন্দেশ নির্বাচন করুন এবং নিচের ফর্মটি পূরণ করে
+            আপনার পছন্দের প্যারা সন্দেশ নির্বাচন করুন এবং নিচের ফর্মটি পূরণ করে
             সহজেই অর্ডার সম্পন্ন করুন।
           </p>
         </div>

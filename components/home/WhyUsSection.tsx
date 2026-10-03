@@ -45,7 +45,7 @@ export default function WhyUsSection() {
         {/* Section Header */}
         <div className="mx-auto mb-7 max-w-2xl text-center sm:mb-9">
           <h2 className="text-2xl font-black leading-tight text-[#5b0909] sm:text-3xl">
-            আমাদের পাড়া সন্দেশ
+            আমাদের প্যারা সন্দেশ
           </h2>
 
           <p className="mt-2 text-sm leading-6 text-[#6b4a3c] sm:text-base">
@@ -89,7 +89,7 @@ export default function WhyUsSection() {
           <div className="relative h-[250px] w-full sm:h-[320px] lg:h-[390px]">
             <Image
               src="https://i.ibb.co.com/3JpC15Y/Chat-GPT-Image-Sep-26-2026-09-03-55-PM.png"
-              alt="নওগাঁর পাড়া সন্দেশের ঐতিহ্য"
+              alt="নওগাঁর প্যারা সন্দেশের ঐতিহ্য"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover object-center"
@@ -119,13 +119,13 @@ export default function WhyUsSection() {
 
               {/* Heading */}
               <h3 className="text-2xl font-black leading-tight text-[#5b0909] sm:text-3xl lg:text-[32px]">
-                নওগাঁর পাড়া সন্দেশের ঐতিহ্য
+                নওগাঁর প্যারা সন্দেশের ঐতিহ্য
               </h3>
 
               {/* Paragraphs */}
               <div className="mt-4 space-y-3 text-sm leading-6 text-[#5b4035] sm:mt-5 sm:text-base sm:leading-7">
                 <p>
-                  নওগাঁর পাড়া সন্দেশ শুধু একটি মিষ্টি নয়, এটি আমাদের ঐতিহ্য,
+                  নওগাঁর প্যারা সন্দেশ শুধু একটি মিষ্টি নয়, এটি আমাদের ঐতিহ্য,
                   সংস্কৃতি ও গর্বের একটি অংশ। বহু বছর ধরে আমাদের স্থানীয়
                   কারিগরদের হাতে তৈরি এই সন্দেশ আজও তার স্বাদ ও মান ধরে রেখেছে।
                 </p>

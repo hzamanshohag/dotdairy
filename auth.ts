@@ -33,7 +33,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           await connectDB();
 
           const admin = await Admin.findOne({
-            email: String(credentials.email),
+            email: String(credentials.email).trim().toLowerCase(),
           });
 
           if (!admin) {
@@ -43,7 +43,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
           const passwordMatch = await bcrypt.compare(
             String(credentials.password),
-            admin.passwordHash
+            admin.passwordHash,
           );
 
           if (!passwordMatch) {
