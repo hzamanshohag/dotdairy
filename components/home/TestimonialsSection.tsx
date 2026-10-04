@@ -91,7 +91,7 @@ export default function TestimonialsSection() {
           </h2>
 
           <p className="mt-2 text-sm leading-6 text-[#6b4a3c]">
-            আমাদের পাড়া সন্দেশ সম্পর্কে আমাদের প্রিয় গ্রাহকদের অভিজ্ঞতা।
+            আমাদের প্যারা সন্দেশ সম্পর্কে আমাদের প্রিয় গ্রাহকদের অভিজ্ঞতা।
           </p>
 
           <div className="mx-auto mt-3 h-1 w-14 rounded-full bg-[#e31b23]" />
