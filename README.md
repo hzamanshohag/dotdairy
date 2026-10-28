@@ -16,11 +16,14 @@ A responsive website for showcasing and ordering Naogaon's traditional **প্�
 
 ## Tech Stack
 
-- [Next.js](https://nextjs.org/) — React framework
-- [React](https://react.dev/) — UI components
-- [TypeScript](https://www.typescriptlang.org/) — type-safe JavaScript (if the project is configured for TypeScript)
-- [Tailwind CSS](https://tailwindcss.com/) — styling and responsive layouts
-- [Lucide React](https://lucide.dev/) — interface icons
+- [Next.js](https://nextjs.org/) - React framework
+- [React](https://react.dev/) - UI components
+- [TypeScript](https://www.typescriptlang.org/) - Type-safe JavaScript
+- [Tailwind CSS](https://tailwindcss.com/) - Styling and responsive layouts
+- [MongoDB](https://www.mongodb.com/) - NoSQL database
+- [NextAuth.js](https://next-auth.js.org/) - Authentication and session management
+- [Cloudinary](https://cloudinary.com/) - Image and media management
+- [Lucide React](https://lucide.dev/) - Interface icons
 
 ## Getting Started
 
