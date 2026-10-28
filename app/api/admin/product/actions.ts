@@ -2,11 +2,13 @@
 
 import { connectDB } from "@/lib/mongodb";
 import Product from "@/models/Product";
+import { revalidatePath } from "next/cache";
 
 import {
   v2 as cloudinary,
   UploadApiResponse,
 } from "cloudinary";
+
 
 cloudinary.config({
   cloud_name:
@@ -103,6 +105,7 @@ export type ProductActionResult =
       message: string;
     }
   | {
+
       success: false;
 
       message: string;
@@ -391,76 +394,58 @@ export async function createProduct(
 // UPDATE PRODUCT
 // ==========================================
 
+
 export async function updateProduct(
   id: string,
-
   data: ProductInput,
 ): Promise<ProductActionResult> {
   try {
     await connectDB();
 
-    const product =
-      await Product.findByIdAndUpdate(
-        id,
-
-        {
-          $set: {
-            name: data.name,
-
-            description:
-              data.description,
-
-            price: data.price,
-
-            weight: data.weight,
-
-            image: data.image,
-
-            isActive:
-              data.isActive ?? true,
-          },
+    const product = await Product.findByIdAndUpdate(
+      id,
+      {
+        $set: {
+          name: data.name,
+          description: data.description,
+          price: data.price,
+          weight: data.weight,
+          image: data.image,
+          isActive: data.isActive ?? true,
         },
-
-        {
-          new: true,
-
-          runValidators: true,
-        },
-      ).lean();
+      },
+      {
+        new: true,
+        runValidators: true,
+      },
+    ).lean();
 
     if (!product) {
       return {
         success: false,
-
-        message:
-          "Product not found.",
+        message: "Product not found.",
       };
     }
 
+    // Revalidate cached pages after successful update
+    revalidatePath("/");
+    revalidatePath("/products");
+
     return {
       success: true,
-
-      data: JSON.parse(
-        JSON.stringify(product),
-      ),
-
-      message:
-        "Product updated successfully.",
+      data: JSON.parse(JSON.stringify(product)),
+      message: "Product updated successfully.",
     };
   } catch (error) {
-    console.error(
-      "Update product error:",
-      error,
-    );
+    console.error("Update product error:", error);
 
     return {
       success: false,
-
-      message:
-        "Failed to update product.",
+      message: "Failed to update product.",
     };
   }
 }
+
 
 // ==========================================
 // DELETE PRODUCT
