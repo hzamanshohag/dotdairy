@@ -3,7 +3,7 @@
 export default function WhatsAppButton() {
   return (
     <a
-      href="https://wa.me/8801781033511"
+      href="https://wa.me/8801312116488?text=হ্যালো%20ডট%20ডেইরি!%20আমি%20আপনার%20পণ্য%20সম্পর্কে%20কিছু%20জিজ্ঞাসা%20করতে%20চাই।"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"

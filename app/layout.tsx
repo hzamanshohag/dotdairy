@@ -13,12 +13,29 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+
 export const metadata: Metadata = {
-  title:
-    "ফ্রেশ ফ্লেভার্স এগ্রো | Fresh Flavours Agro – নওগাঁর প্যারা সন্দেশ ও দেশি খাবার",
+  title: "Dot Dairy | নওগাঁর প্যারা সন্দেশ ও দেশি খাবার",
 
   description:
-    "নওগাঁর প্যারা সন্দেশ, নারকেল নাড়ু, আলুর পাপড়, খেজুরের গুড়, আখের জুস পাউডার, আমসহ হোমমেড কেক, পিজ্জা ও ফ্রোজেন আইটেম পান ফ্রেশ ফ্লেভার্স এগ্রোতে।",
+    "নওগাঁর ঐতিহ্যবাহী প্যারা সন্দেশ, নারকেল নাড়ু, আলুর পাপড়, খেজুরের গুড়, আখের জুস পাউডার, আম, হোমমেড কেক, পিজ্জা ও ফ্রোজেন ফুড কিনুন Dot Dairy থেকে।",
+
+  metadataBase: new URL("https://dotdairy.com"),
+
+  openGraph: {
+    title: "Dot Dairy | খাঁটি স্বাদ, দেশি খাবার",
+    description:
+      "ঐতিহ্যবাহী দেশি খাবার ও মানসম্মত ফ্রেশ ফুড পণ্য অর্ডার করুন Dot Dairy থেকে।",
+    url: "https://dotdairy.com",
+    siteName: "Dot Dairy",
+    locale: "bn_BD",
+    type: "website",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -28,7 +45,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-       
+
         {children}
         <Toaster position="top-right" richColors closeButton />
       </body>

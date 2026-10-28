@@ -3,12 +3,13 @@
 import { FormEvent, useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { Eye, EyeOff } from "lucide-react";
 
 export default function AdminLoginPage() {
   const router = useRouter();
-
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("admin@gmail.com");
+const [password, setPassword] = useState("admin@123");
 
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -83,26 +84,42 @@ export default function AdminLoginPage() {
             />
           </div>
 
-          {/* Password */}
-          <div>
-            <label
-              htmlFor="password"
-              className="mb-2 block text-sm font-medium text-gray-700"
-            >
-              Password
-            </label>
+         {/* Password */}
+<div>
+  <label
+    htmlFor="password"
+    className="mb-2 block text-sm font-medium text-gray-700"
+  >
+    Password
+  </label>
 
-            <input
-              id="password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Enter your password"
-              required
-              autoComplete="current-password"
-              className="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none transition focus:border-red-500 focus:ring-2 focus:ring-red-100"
-            />
-          </div>
+  <div className="relative">
+    <input
+      id="password"
+      type={showPassword ? "text" : "password"}
+      value={password}
+      onChange={(e) => setPassword(e.target.value)}
+      placeholder="Enter your password"
+      required
+      autoComplete="current-password"
+      className="w-full rounded-lg border border-gray-300 px-4 py-3 pr-12 outline-none transition focus:border-red-500 focus:ring-2 focus:ring-red-100"
+    />
+
+    <button
+      type="button"
+      onClick={() => setShowPassword((prev) => !prev)}
+      aria-label={showPassword ? "Hide password" : "Show password"}
+      aria-pressed={showPassword}
+      className="absolute inset-y-0 right-0 flex items-center px-4 text-gray-500 transition hover:text-red-600"
+    >
+      {showPassword ? (
+        <EyeOff size={20} />
+      ) : (
+        <Eye size={20} />
+      )}
+    </button>
+  </div>
+</div>
 
           {/* Submit */}
           <button

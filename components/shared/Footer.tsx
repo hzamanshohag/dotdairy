@@ -148,17 +148,17 @@ export default function Footer() {
                 <li className="flex items-start gap-2.5">
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#f5c400]" />
 
-                  <span>নওগাঁ, বাংলাদেশ</span>
+                  <span>খুলনা, বাংলাদেশ</span>
                 </li>
                 {/* Phone */}
                 <li className="flex items-center gap-2.5">
                   <Phone className="h-4 w-4 shrink-0 text-[#f5c400]" />
 
                   <a
-                    href="tel:+8801781033511"
+                    href="tel:+8801312116488"
                     className="break-all transition hover:text-[#f5c400]"
                   >
-                    +880 1781-033511
+                    +880 1312-116488
                   </a>
                 </li>
                 {/* Email */}
@@ -169,13 +169,13 @@ export default function Footer() {
                     href="mailto:Jannatulferdous2381@gmail.com"
                     className="break-all transition hover:text-[#f5c400]"
                   >
-                    Jannatulferdous2381@gmail.com
+                    admin@gmail.com
                   </a>
                 </li>
                 {/* Facebook */}
                 <li>
                   <a
-                    href="https://www.facebook.com/freshflavoursagro"
+                    href="https://www.facebook.com/hzaman.shohag"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2.5 transition hover:text-[#1877f2]"
@@ -203,7 +203,7 @@ export default function Footer() {
       <div className="border-t border-[#551010]">
   <div className="mx-auto max-w-7xl px-4 py-3 text-center sm:px-6 sm:py-4 lg:px-8">
     <p className="text-[10px] leading-5 text-gray-400 sm:text-xs">
-      © 2026 নওগাঁ পাড়া সন্দেশ | সর্বস্বত্ব সংরক্ষিত{" "}
+      © 2026 নওগাঁ প্যারা সন্দেশ | সর্বস্বত্ব সংরক্ষিত{" "}
       <span className="mx-1 text-gray-600">•</span>
       Developed by{" "}
       <a
