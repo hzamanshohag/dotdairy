@@ -1,36 +1,130 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# নওগাঁর প্যারা সন্দেশ | Naogaon Para Sandesh
+
+A responsive website for showcasing and ordering Naogaon's traditional **প্যারা সন্দেশ (Para Sandesh)**. The interface uses Bengali content, a maroon-and-cream color palette, product-focused navigation, and a customer testimonial carousel.
+
+## Features
+
+- **Responsive navigation** for desktop and mobile devices
+- **Bengali-language interface** for a localized customer experience
+- **Brand logo** in the sticky navigation bar
+- **Section-based navigation** for About, Products, Why Us, Testimonials, and Order
+- **Order call-to-action** links that direct visitors to the order section
+- **Customer testimonials** with customer images, star ratings, navigation dots, and previous/next controls
+- **Smooth testimonial carousel** with one-card-at-a-time navigation, responsive card widths, and autoplay
+- **Responsive layout** styled with Tailwind CSS
+- **Optimized images** using Next.js Image
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org/) — React framework
+- [React](https://react.dev/) — UI components
+- [TypeScript](https://www.typescriptlang.org/) — type-safe JavaScript (if the project is configured for TypeScript)
+- [Tailwind CSS](https://tailwindcss.com/) — styling and responsive layouts
+- [Lucide React](https://lucide.dev/) — interface icons
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+Install [Node.js](https://nodejs.org/) and a package manager such as npm, pnpm, or yarn.
+
+### 1. Clone the repository
+
+```bash
+git clone <https://github.com/hzamanshohag/dotdairy.git>
+cd <dotdairy>
+```
+
+Replace the placeholders with your repository URL and project directory.
+
+### 2. Install dependencies
+
+Using npm:
+
+```bash
+npm install
+```
+
+Or, if the project uses pnpm:
+
+```bash
+pnpm install
+```
+
+### 3. Start the development server
+
+Using npm:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Or, with pnpm:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+## Available Scripts
 
-To learn more about Next.js, take a look at the following resources:
+The exact scripts depend on the project's `package.json`. A typical Next.js project includes:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the local development server |
+| `npm run build` | Build the production application |
+| `npm run start` | Run the production build |
+| `npm run lint` | Run linting, if configured |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Check `package.json` to confirm which scripts are available.
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+A typical App Router layout may look like this:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```text
+project-root/
+├── public/
+│   ├── img/
+│   │   └── logo.svg
+│   └── images/
+│       └── reviews/
+│           ├── user-1.jpg
+│           ├── user-2.jpg
+│           ├── user-3.jpg
+│           └── user-4.jpg
+├── src/
+│   └── app/
+│       ├── layout.tsx
+│       ├── page.tsx
+│       └── globals.css
+├── package.json
+├── tsconfig.json
+└── README.md
+```
+
+> This is an illustrative structure. Adjust it to match your actual repository. Components may be stored in a separate `components/` directory or elsewhere.
+
+
+## Customization
+
+- **Brand colors:** The current interface uses maroon (`#5b0909`), red (`#ed1c24` / `#e31b23`), cream (`#fffaf0`), and gold (`#f2c94c`).
+- **Navigation:** Edit the `navLinks` array in the Navbar component.
+- **Testimonials:** Edit the `testimonials` array to change customer names, reviews, and image paths.
+- **Carousel behavior:** Adjust the transition duration and autoplay interval in the Testimonials component.
+
+## Production Build
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+If the build succeeds, start it locally with:
+
+```bash
+npm run start
+```
