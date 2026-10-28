@@ -144,7 +144,7 @@ export default function TestimonialsSection() {
   }, [isPaused, updateIndex]);
 
   return (
-    <section className="overflow-hidden bg-[#fffaf0] py-14 sm:py-16 lg:py-20">
+    <section id="testimonials" className="overflow-hidden bg-[#fffaf0] py-14 sm:py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
           <div className="mb-10 text-center">
